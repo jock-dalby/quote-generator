@@ -1,0 +1,36 @@
+/*----------------------------------
+  General Formatting
+----------------------------------*/
+
+* {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+body{
+  text-align: center;
+}
+
+header,
+footer {
+  background: yellow;
+}
+
+.quoteButton {
+  background: #000;
+  color: white;
+  width: 50%;
+    padding-top: 20px;
+  padding-bottom: 20px;
+  height: 100%;
+}
+
+#quoteBox {
+  border: 3px solid #000;
+  margin: 30px auto 50px;
+}
+
+#quoteBox p {
+  font-size: 6rem;
+}
