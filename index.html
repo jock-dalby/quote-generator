@@ -10,9 +10,6 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
-  <!-- JavaScript
-    ------------------------------------------>
-    <script src="js/quoteGen.js"></script>
   <!-- Mobile Specific Metas
   ------------------------------------------>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,15 +24,21 @@
     <div class="container">
       <h3>This is a random quote generator for EDA, WLG, Task 7.0</h3>
       <button class="button quoteButton">Quote me happy!</button>
+      <div>
+        <p id="infoBar"></p>
+      </div>
       <div id="quoteBox">
-        <p>"Quote to appear here"</p>
+        <p class="test">"Quote to appear here"</p>
       </div>
     </div>
   </section>
   <footer>
     <div class="container">
       <h4>Created by Jock Dalby, EDA, Wellington</h4>
+      <span style="z-index:50;font-size:0.9em;"><img src="https://theysaidso.com/branding/theysaidso.png" height="20" width="20" alt="theysaidso.com"/><a href="https://theysaidso.com" title="Powered by quotes from theysaidso.com" style="color: #9fcc25; margin-left: 4px; vertical-align: middle;">theysaidso.com</a></span>
     </div>
   </footer>
+  <script src="js/libs/jquery-3.1.0.min.js"></script>
+  <script src="js/quoteGen.js"></script>
 </body>
 </html>
