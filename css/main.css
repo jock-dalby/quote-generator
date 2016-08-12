@@ -4,6 +4,7 @@
 
 * {
   margin: 0 auto;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -18,22 +19,25 @@ footer {
 }
 
 .quoteButton {
-  background: #000;
-  color: white;
+  background: yellow;
   width: 50%;
   padding-top: 20px;
   padding-bottom: 20px;
   height: 100%;
 }
 
+p {
+    margin-bottom: 0;
+}
+
 #quoteBox {
   border: 3px solid #000;
   margin: 30px auto 50px;
-  padding-bottom: 0px;
 }
 
 #quoteBox p {
   font-size: 6rem;
+  padding-bottom; 0;
 }
 
 .test{

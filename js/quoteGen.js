@@ -1,7 +1,7 @@
 $(document).ready(function() {
   // Handler for .ready() called.
   var url = "http://api.icndb.com/jokes/random";
-  var colors = ["orange", "blue", "green", "pink", "red", "yellow"]
+  var colors = ["orange", "blue",  "indigo", "green", "pink", "red"]
   var index = 0;
   $(".quoteButton").click(function() {
     $.ajax({
@@ -12,7 +12,7 @@ $(document).ready(function() {
         // $(".test").text(msg);
         console.log(msg);
         //print the quote to the page
-        $(".test").text('"' + msg.value.joke + '"');
+        $(".test").html('"' + msg.value.joke + '"');
         // color thingy
         console.log(colors[index])
         index++ ;
