@@ -33,13 +33,7 @@ p {
 #quoteBox {
   border: 3px solid #000;
   margin: 30px auto 50px;
-}
-
-#quoteBox p {
-  font-size: 6rem;
-  padding-bottom; 0;
-}
-
-.test{
   transition: all 1s;
+  font-size: 4rem;
+  padding-bottom; 0;
 }

@@ -1,29 +1,40 @@
 $(document).ready(function() {
   // Handler for .ready() called.
-  var url = "http://api.icndb.com/jokes/random";
-  var colors = ["orange", "blue",  "indigo", "green", "pink", "red"]
+  // API URL is lifted from the page.
+  var url = $('#url').text();
+  console.log(url)
+  // Declare colors variable
+  var colors = ["orange", "limegreen",  "lightblue", "beige", "pink", "olive"]
   var index = 0;
-  $(".quoteButton").click(function() {
+  $("#quoteButton").click(function() {
+    // Change button text while getting quote
+    $("#quoteButton").html("Retrieving quote...");
     $.ajax({
       method: "GET",
       url: url
     })
+
     .done(function(msg) {
-        // $(".test").text(msg);
+        // Change button text back when quote is received
+        $("#quoteButton").html("Quote me happy!");
+
+        // Print the entire msg object to console.log to decifer which part we want.
         console.log(msg);
-        //print the quote to the page
-        $(".test").html('"' + msg.value.joke + '"');
-        // color thingy
+
+        // Print the quote part of the msg object to the page.
+        $("#quoteBox").html('"' + msg.value.joke + '"');
+
+        // Cycle through the colors array each time quote button is pressed.
         console.log(colors[index])
-        index++ ;
-        $(".test").css({
+        $("#quoteBox").css({
           background: colors[index]
         })
+        index++ ;
         if (index == colors.length) {
           index = 0;
         }
 
-        //category thingy
+        // Print the category of the joke if it has one.
         var category = msg.value.categories;
         if (category.length == 0) return
         for (var i = 0; i < category.length; i++) {
