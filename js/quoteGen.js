@@ -1,7 +1,7 @@
 $(document).ready(function() {
   // Handler for .ready() called.
   // API URL is lifted from the page.
-  var url = $('#url').text();
+  var url = $('#urlInput').text();
   console.log(url)
   // Declare colors variable
   var colors = ["orange", "limegreen",  "lightblue", "beige", "pink", "olive"]
