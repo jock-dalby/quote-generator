@@ -3,9 +3,6 @@ $(document).ready(function() {
   // API URL is lifted from the page.
   var url = $('#urlInput').text();
   console.log(url)
-  // Declare colors variable
-  var colors = ["orange", "limegreen",  "lightblue", "beige", "pink", "olive"]
-  var index = 0;
   $("#quoteButton").click(function() {
     // Change button text while getting quote
     $("#quoteButton").html("Retrieving quote...");
@@ -22,17 +19,29 @@ $(document).ready(function() {
         console.log(msg);
 
         // Print the quote part of the msg object to the page.
-        $("#quoteBox").html('"' + msg.value.joke + '"');
-
-        // Cycle through the colors array each time quote button is pressed.
-        console.log(colors[index])
-        $("#quoteBox").css({
-          background: colors[index]
-        })
-        index++ ;
-        if (index == colors.length) {
-          index = 0;
+        // If length of quote is > 10 words, reduce the font size.
+        var newQuote = '"' + msg.value.joke + '"';
+        var quoteSize = newQuote.split(" ");
+        if (quoteSize.length > 10) {
+          $("#quoteBox").html(newQuote.fontsize(6));
+        } else {
+          $("#quoteBox").html(newQuote.fontsize(18));
         }
+        // Random change background color.
+        function changeColor() {
+          // Create random rgb color
+          var x = Math.floor(Math.random() * 256); // range is 0-255
+          var y = Math.floor(Math.random() * 256);
+          var z = Math.floor(Math.random() * 256);
+          var thergb = "rgb(" + x + "," + y + "," + z + ")";
+          console.log(thergb);
+          // Change background to random rgb color.
+          $(".mainBox").css({
+            background: thergb
+          });
+        }
+        // Call the changeColor() function.
+        changeColor();
 
         // Print the category of the joke if it has one.
         var category = msg.value.categories;
