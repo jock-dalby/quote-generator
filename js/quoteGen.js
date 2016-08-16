@@ -6,6 +6,7 @@ $(document).ready(function() {
   $("#quoteButton").click(function() {
     // Change button text while getting quote
     $("#quoteButton").html("Retrieving quote...");
+    $("#quote").addClass("loader");
     $.ajax({
       method: "GET",
       url: url
@@ -14,7 +15,7 @@ $(document).ready(function() {
     .done(function(msg) {
         // Change button text back when quote is received
         $("#quoteButton").html("Quote me happy!");
-
+        $("#quoteBox").removeClass("loader");
         // Print the entire msg object to console.log to decifer which part we want.
         console.log(msg);
 
@@ -27,6 +28,8 @@ $(document).ready(function() {
         } else {
           $("#quoteBox").html(newQuote.fontsize(18));
         }
+
+
         // Random change background color.
         function changeColor() {
           // Create random rgb color
@@ -45,7 +48,9 @@ $(document).ready(function() {
 
         // Print the category of the joke if it has one.
         var category = msg.value.categories;
-        if (category.length == 0) return
+        if (category.length == 0) {
+          $("#infoBar").html("Sorry folks, we do not have a category for this particular quote.");
+        }
         for (var i = 0; i < category.length; i++) {
           console.log(category[i]);
           $("#infoBar").html("This joke is from the <strong>" + category[i] + "</strong> category!");
