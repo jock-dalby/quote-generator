@@ -57,6 +57,19 @@ $(document).ready(function() {
         }
       });
     });
+
+    $("#quoteButton2").click(function(){
+      $("#quoteButton2").css({
+        background: "red"
+      });
+    })
+
+    $("#quoteButton3").click(function(){
+      $("#quoteButton3").html("I'm not working either!");
+      $("#quoteButton3").css({
+        background: "red"
+      });
+    })
 });
 
 
