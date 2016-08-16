@@ -1,20 +1,20 @@
 $(document).ready(function() {
   // Handler for .ready() called.
   // API URL is lifted from the page.
-  var url = $('#urlInput').text();
+  var url = "http://api.icndb.com/jokes/random"
   console.log(url)
-  $("#quoteButton").click(function() {
+  $("#quoteButton1").click(function() {
     // Change button text while getting quote
-    $("#quoteButton").html("Retrieving quote...");
-    $("#quote").addClass("loader");
+    $("#quoteButton1").html("Retrieving quote...");
+    $("#quoteBox").addClass("loader");
     $.ajax({
       method: "GET",
-      url: url
+      url: 	url
     })
 
     .done(function(msg) {
         // Change button text back when quote is received
-        $("#quoteButton").html("Quote me happy!");
+        $("#quoteButton1").html("Chuck me a quote!");
         $("#quoteBox").removeClass("loader");
         // Print the entire msg object to console.log to decifer which part we want.
         console.log(msg);
