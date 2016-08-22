@@ -1,10 +1,12 @@
 $(document).ready(function() {
   // Handler for .ready() called.
   // API URL is lifted from the page.
-  var url = "http://api.icndb.com/jokes/random";
   // var url = document.getElementById("dropdown");
   // console.log(url.options[url.selectedIndex].value)
   $("#quoteButton1").click(function() {
+    var selectMenu = document.getElementById("dropdown");
+    var url = selectMenu.options[selectMenu.selectedIndex].value;
+    console.log(url);
     // Change button text while getting quote
     $("#quoteButton1").html("Retrieving quote...");
     $("#quoteBox").addClass("loader");
