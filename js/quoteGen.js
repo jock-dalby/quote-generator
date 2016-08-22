@@ -1,8 +1,9 @@
 $(document).ready(function() {
   // Handler for .ready() called.
   // API URL is lifted from the page.
-  var url = "http://api.icndb.com/jokes/random"
-  console.log(url)
+  var url = "http://api.icndb.com/jokes/random";
+  // var url = document.getElementById("dropdown");
+  // console.log(url.options[url.selectedIndex].value)
   $("#quoteButton1").click(function() {
     // Change button text while getting quote
     $("#quoteButton1").html("Retrieving quote...");
@@ -14,7 +15,7 @@ $(document).ready(function() {
 
     .done(function(msg) {
         // Change button text back when quote is received
-        $("#quoteButton1").html("Chuck me a quote!");
+        $("#quoteButton1").html("Hit me with a quote from the one and only ");
         $("#quoteBox").removeClass("loader");
         // Print the entire msg object to console.log to decifer which part we want.
         console.log(msg);
