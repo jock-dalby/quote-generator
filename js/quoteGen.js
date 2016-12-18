@@ -9,7 +9,7 @@ $(document).ready(function() {
     $("#quoteBox").addClass("loader");
     $.ajax({
       method: "GET",
-      url: 	"http://api.icndb.com/jokes/random"
+      url: 	"https://api.icndb.com/jokes/random"
     })
 
     .done(function(msg) {
