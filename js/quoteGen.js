@@ -3,21 +3,18 @@ $(document).ready(function() {
   // API URL is lifted from the page.
   // var url = document.getElementById("dropdown");
   // console.log(url.options[url.selectedIndex].value)
-  $("#quoteButton1").click(function() {
-    var selectMenu = document.getElementById("dropdown");
-    var url = selectMenu.options[selectMenu.selectedIndex].value;
-    console.log(url);
+ $("#quoteButton1").click(function() {
     // Change button text while getting quote
     $("#quoteButton1").html("Retrieving quote...");
     $("#quoteBox").addClass("loader");
     $.ajax({
       method: "GET",
-      url: 	url
+      url: 	"http://api.icndb.com/jokes/random"
     })
 
     .done(function(msg) {
         // Change button text back when quote is received
-        $("#quoteButton1").html("Hit me with a quote from the one and only ");
+        $("#quoteButton1").html("Chuck me a quote!");
         $("#quoteBox").removeClass("loader");
         // Print the entire msg object to console.log to decifer which part we want.
         console.log(msg);
@@ -60,19 +57,6 @@ $(document).ready(function() {
         }
       });
     });
-
-    $("#quoteButton2").click(function(){
-      $("#quoteButton2").css({
-        background: "red"
-      });
-    })
-
-    $("#quoteButton3").click(function(){
-      $("#quoteButton3").html("I'm not working either!");
-      $("#quoteButton3").css({
-        background: "red"
-      });
-    })
 });
 
 
